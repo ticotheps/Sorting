@@ -1,3 +1,14 @@
+# BIG O CLASSIFICATIONS
+
+# O(c)          => constant time
+# O(log n)      => 
+# O(n)          => linear time
+# O(n log n)    => 
+# O(n^c)        => i.e. - quadratic time = O(n^2)
+# O(c^n)        => 
+
+#-------------------------------------------
+
 # Examples from Beej's Lecture
 import math
 
@@ -68,21 +79,21 @@ print(frotz(36))
 
 # ---------------------------------------------
 
-class Book:
-    def __init__(self, t, a, g):
-        self.title: t
-        self.author: a
-        self.genre: g
+# class Book:
+#     def __init__(self, t, a, g):
+#         self.title: t
+#         self.author: a
+#         self.genre: g
 
-def insertion_sort(books):
-    for i in range(1, len(books)):
-        temp = books[i]
-        j = i
+# def insertion_sort(books):
+#     for i in range(1, len(books)):
+#         temp = books[i]
+#         j = i
 
-        while j > 0 and temp.genre < books[j - 1].genre:
-            books[j] = books[j-1]  # scoot books over to make room (this is a "swap" in disguise)
-            j -= 1
+#         while j > 0 and temp.genre < books[j - 1].genre:
+#             books[j] = books[j-1]  # scoot books over to make room (this is a "swap" in disguise)
+#             j -= 1
 
-    #  j is now the index of where we want to place the book
-    return books
+#     #  j is now the index of where we want to place the book
+#     return books
         
