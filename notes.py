@@ -80,9 +80,9 @@ def insertion_sort(books):
         j = i
 
         while j > 0 and temp.genre < books[j - 1].genre:
-            books[j] = books[j-1]  # scoot books over to make room
+            books[j] = books[j-1]  # scoot books over to make room (this is a "swap" in disguise)
             j -= 1
-            
+
     #  j is now the index of where we want to place the book
     return books
         
