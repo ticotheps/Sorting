@@ -1,3 +1,5 @@
+example_list = [1, 4, 2, 7, 9, 5, 3, 6, 2, 8, 10]
+
 # TO-DO: Complete the selection_sort() function below 
 def selection_sort( arr ):
     # loop through n-1 elements
@@ -6,9 +8,11 @@ def selection_sort( arr ):
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc) 
-             
-
-
+        if cur_index > smallest_index:
+            pass
+        else:
+            smallest_index = cur_index
+            i +=1    
 
         # TO-DO: swap
 
@@ -19,12 +23,14 @@ def selection_sort( arr ):
 
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort( arr ):
 
-    return arr
+# def bubble_sort( arr ):
+
+#     return arr
 
 
 # STRETCH: implement the Count Sort function below
-def count_sort( arr, maximum=-1 ):
 
-    return arr
+# def count_sort( arr, maximum=-1 ):
+
+#     return arr
