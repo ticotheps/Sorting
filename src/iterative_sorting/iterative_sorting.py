@@ -1,22 +1,19 @@
+# Examples from Beej's Lecture
 import math
 
 def foo(n):
     sq_root = int(math.sqrt(n)) # O(1) +
     for i in range(0, sq_root): # O(sqrt n)
         print(i)                  # O(1)
-  
 # O(1) + O(sqrt n) choose dominant term
 # O(sqrt n)
-
 print(foo(36))
 
 def frotz(n):
     s = 0  # O(1)
-
     for i in range(n):  # O(n)  
         for j in range(2 * n):  # O(2 * n)
             s += i * j  # O(1)
-    
     return s  # O(1)
 
 print(frotz(36))
@@ -29,14 +26,41 @@ print(frotz(36))
 # O(2 * n^2) <-- drop the constant
 # O(n^2) <-- final runtime complexity
 
-          
+# ---------------------------------------------
 
+# O(8 * n) === O(n) <-- both of these simplify to O(n) runtime because we're more interested in the shape of the curve
+# O(2 * n) === O(n)
 
+# O(4 * n!) === O(n!) <-- both of these simplify to O(n!) runtime
+# O(2 * n!) === O(n!)
+# O(n^2)
 
+# ---------------------------------------------
 
-# example_list = [1, 4, 2, 7, 9, 5, 3, 6, 2, 8, 10]
+# def bar(x):
+#     sum = 0
+#     for i in range(0, 1463):
+#         i += sum
+#         for j in range(0, x):
+#             for k in range(x, x + 15):
+#                 sum += 1
+
+# ---------------------------------------------
+
+def search(list, value):
+    for i in list:
+        if i == value:
+            return True
+    return False
+
+# O(n)
+
+print(search([1,2,3,4,5,6,7,8,9,10], 7))
+
+# ---------------------------------------------
 
 # # TO-DO: Complete the selection_sort() function below 
+
 # def selection_sort( arr ):
 #     # loop through n-1 elements
 #     for i in range(0, len(arr) - 1):
@@ -52,7 +76,7 @@ print(frotz(36))
 #             i+=1   
 #         # TO-DO: swap
 #     return arr
-# print(selection_sort(example_list))
+# print(selection_sort([1,3,2,4,5]))
 
 
 # TO-DO:  implement the Bubble Sort function below
