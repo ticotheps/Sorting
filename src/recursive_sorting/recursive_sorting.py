@@ -24,11 +24,16 @@ print(merge(arrA, arrB))
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 
-# def merge_sort( arr ):
-#     # TO-DO
+def merge_sort( arr ):
+    if len(arr) == 0 or len(arr) == 1:
+        return arr
+    else:
+        middle = int(len(arr)/2)
+        Lhs = merge_sort(arr[:middle])
+        Rhs = merge_sort(arr[middle:])
+        return merge(Lhs, Rhs)
 
-#     return arr
-
+print(merge_sort([4,2,9,5,7,1,8,3,6]))
 
 # STRETCH: implement an in-place merge sort algorithm
 
@@ -45,6 +50,7 @@ print(merge(arrA, arrB))
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
-def timsort( arr ):
 
-    return arr
+# def timsort( arr ):
+
+#     return arr
