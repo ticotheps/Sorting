@@ -63,31 +63,69 @@
 # Example 4
 # Space Complexity: 
 # Runtime Complexity: O(2^n)
-counter = 0
+# counter = 0
 
-def foo(n):
-    global counter
+# def foo(n):
+#     global counter
 
-    if n <= 0:
-        return
+#     if n <= 0:
+#         return
     
     # print(n)
-    counter += 1
+    # counter += 1
 
     # Each call makes two calls, so O(2^n)
     # If each call makes 3 calls, then O(3^n)
-    foo(n-1)
-    foo(n-2)
+    # foo(n-1)
+    # foo(n-2)
 
 # foo(1)    # 1
 # foo(2)    # 2
 # foo(3)    # 4
-foo(4)    # 7
+# foo(4)    # 7
 # foo(5)    # 12
 # foo(6)      # 20
 
 # O(2^n)
 
-print(counter)
+# print(counter)
 
 #----------------------------------------------------------
+
+# Quick Sort Example
+# Steps for Using Quick Sort:
+# 1) Establish the "The Pivot" (a number to compare all other numbers to),
+#    just choose the first number in the list.
+# 2) Use the pivot to partition the list into three separate lists: numbers
+#    that are greater than the pivot, the already-sorted pivot itself, and 
+#    numbers that are less than the pivot.
+# 3) Now, QUICK SORT all of the non-pivot lists.
+# 4) Concatenate all the resulting lists.
+
+# Each partitioning pass takes O(n)-ish
+# O(n log n) complexity for the whole algorithm
+
+[5, 9, 3, 7, 2, 8, 1, 6]
+
+def partition(l):
+    left = []
+    pivot = l[0]
+    right = []
+
+    for v in l[1:]:
+        if v <= pivot:
+            left.append(v)
+        else:
+            right.append(v)
+
+    return left, pivot, right
+
+def quicksort(l):
+    if len(l) <= 1:
+        return l
+
+    left, pivot, right = partition(l)
+
+    return quicksort(left) + [pivot] + quicksort(right)
+
+print(quicksort([5, 9, 3, 7, 2, 8, 1, 6]))
