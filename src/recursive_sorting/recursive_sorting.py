@@ -1,28 +1,22 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 
-arrA = [3, 12, 16, 8, 4 , 19, 9, 1, 13]
-arrB = [15, 7, 14, 17, 18, 11 , 2, 5, 10, 6]
+arrA = [1, 2, 3, 4]
+arrB = [5, 6, 7, 8]
 
 def merge( arrA, arrB ):
-    elements = len( arrA ) + len( arrB )
-    merged_arr = [0] * elements
-    # Create 'checked_item_1' variable to hold value of first item being compared.
+    arrA_length = len( arrA )
+    arrB_length = len( arrB )
+    merged_arr = []
+    i, j = 0, 0
 
-    # Create 'checked_item_2' variable to hold value of second item being compared.
-
-    # Create new 'arrC' array to hold values of sorted items during comparisons.
-
-    # Set 'checked_item_1' to arrA[0].
-
-    # Set 'checked_item_2' to arrB[0].
-
-    # Compare 'checked_item_1' and 'checked_item_2' and append the smaller of the 
-    # two items into the merged_arr.
-
-    # Continue comparing items until one array has been eliminated.
-
-    # Merge the remaining array into the merged_arr.
-
+    while i < arrA_length and j < arrB_length:
+        if arrA[i] < arrB[j]:
+            merged_arr.append(arrA[i])
+            i += 1
+        else:
+            merged_arr.append(arrB[j])
+            j += 1
+    merged_arr = merged_arr + arrA[i:] + arrB[j:]
     
     return merged_arr
 
